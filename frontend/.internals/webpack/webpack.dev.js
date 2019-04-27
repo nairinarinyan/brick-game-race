@@ -12,12 +12,12 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 const kojiProjectConfig = JSON.parse(require('../../../.koji/resources/scripts/buildConfig')());
 
-module.exports = require('./webpack.base.babel')({
+module.exports = require('./webpack.base')({
   mode: 'development',
   entry: [
-    'eventsource-polyfill', // Necessary for hot reloading with IE
+    'eventsource-polyfill', // Necessary for hot reloading with IE, but does anyone care about IE any more...??
     'webpack-hot-middleware/client?reload=true',
-    path.join(process.cwd(), 'index.js'),
+    path.join(process.cwd(), 'index.ts'),
   ],
   output: {
     filename: '[name].js',

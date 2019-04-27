@@ -6,9 +6,9 @@ const { HashedModuleIdsPlugin } = require('webpack');
 
 const kojiProjectConfig = JSON.parse(require('../../../.koji/resources/scripts/buildConfig')());
 
-module.exports = require('./webpack.base.babel')({
+module.exports = require('./webpack.base')({
   mode: 'production',
-  entry: [path.join(process.cwd(), 'index.js')],
+  entry: [path.join(process.cwd(), 'index.ts')],
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',

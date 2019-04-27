@@ -30,7 +30,7 @@ function createWebpackMiddleware(compiler, publicPath) {
 }
 
 module.exports = (app, options) => {
-  const webpackConfig = require('../../webpack/webpack.dev.babel');
+  const webpackConfig = require('../../webpack/webpack.dev');
 
   const compiler = webpack(webpackConfig);
   const middleware = createWebpackMiddleware(

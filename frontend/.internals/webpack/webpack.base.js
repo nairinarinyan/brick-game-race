@@ -21,11 +21,11 @@ module.exports = options => ({
   module: {
     rules: [
       {
-        test: /\.js$/, // Transform all .js files required somewhere with Babel
+        // TypeScript file loading
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: options.babelQuery,
+          loader: 'awesome-typescript-loader',
         },
       },
       {
@@ -118,7 +118,7 @@ module.exports = options => ({
   ]),
   resolve: {
     modules: ['node_modules', 'frontend'],
-    extensions: ['.js', '.jsx', '.react.js'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     mainFields: ['browser', 'jsnext:main', 'main'],
   },
   devtool: options.devtool,

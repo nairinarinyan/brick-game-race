@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "title": "Gem Match",
-    "description": "An easily extendable matching game. Customize it to be whatever you want with Koji.",
-    "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/0283d382-0feb-4d6b-86f6-69ec2817d857/dc9v7iu-3677d383-767e-48e7-b3cc-6f1b7f8ad609.png",
-    "icon": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/0283d382-0feb-4d6b-86f6-69ec2817d857/dc2fouk-ed449fbb-8fd5-49d9-9ea3-e445fea08148.png/v1/fill/w_894,h_894,strp/bejeweled_orange_gem_by_ldinos_dc2fouk-pre.png",
+    "title": "Hello, World!",
+    "description": "A TypeScript skeleton. Change me!",
+    "image": "https://images.koji-cdn.com/2cbe7cc0-739b-481a-8beb-d4d1479cbdac/cda1ce03-d0b8-4216-b394-cc6449354a29.png",
+    "icon": "https://images.koji-cdn.com/2cbe7cc0-739b-481a-8beb-d4d1479cbdac/b8cf69a9-b389-4129-8cde-652da7874612.png",
     "gaCode": ""
   },
   "@@editor": [
