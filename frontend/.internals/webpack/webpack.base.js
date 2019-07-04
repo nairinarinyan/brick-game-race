@@ -94,10 +94,6 @@ module.exports = options => ({
         ],
       },
       {
-        test: /\.html$/,
-        use: 'html-loader',
-      },
-      {
         test: /\.(mp4|webm)$/,
         use: {
           loader: 'url-loader',
@@ -118,7 +114,6 @@ module.exports = options => ({
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        koji: kojiProjectConfig,
       },
     }),
 

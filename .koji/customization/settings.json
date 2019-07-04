@@ -1,0 +1,39 @@
+{
+    "settings": {
+        "name": "Brick Race",
+        "startText": "Start!",
+        "gameOverText": "Game Over",
+        "perspective": 45
+    },
+    "@@editor": [
+        {
+            "key": "settings",
+            "name": "Game settings",
+            "icon": "🎮",
+            "source": "settings.json",
+            "fields": [
+                {
+                    "key": "name",
+                    "name": "App name"
+                },
+                {
+                    "key": "startText",
+                    "name": "Start Button Text"
+                },
+                {
+                    "key": "gameOverText",
+                    "name": "Text to show when game over"
+                },
+                {
+                    "key": "gameTopBar",
+                    "name": "If game should have a top bar or not",
+                    "type": "boolean"
+                },
+                {
+                    "key": "perspective",
+                    "name": "Control perspective angle of the game (min: 10, max: 80)"
+                }
+            ]
+        }
+    ]
+}

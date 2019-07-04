@@ -1,0 +1,49 @@
+{
+    "colors": {
+        "backgroundColor": "#FFFFFF",
+        "mainColor": "#0229F6",
+        "textColor": "#040408",
+        "cubeMainColor": "#0229F6",
+        "cubeSecondaryColor": "#DFE4FF"
+    },
+    "@@editor": [
+        {
+            "key": "colors",
+            "name": "Colors",
+            "icon": "💅",
+            "source": "colors.json",
+            "fields": [
+                {
+                    "key": "backgroundColor",
+                    "name": "Background color",
+                    "description": "Background color",
+                    "type": "color"
+                },
+                {
+                    "key": "mainColor",
+                    "name": "Main color",
+                    "description": "Main color",
+                    "type": "color"
+                },
+                {
+                    "key": "textColor",
+                    "name": "Text color",
+                    "description": "Color of texts",
+                    "type": "color"
+                },
+                {
+                    "key": "cubeMainColor",
+                    "name": "Top color of cubes",
+                    "description": "Top color of cubes",
+                    "type": "color"
+                },
+                {
+                    "key": "cubeSecondaryColor",
+                    "name": "Side color of cubes",
+                    "description": "Side color of cubes",
+                    "type": "color"
+                }
+            ]
+        }
+    ]
+}

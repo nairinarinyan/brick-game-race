@@ -1,9 +1,13 @@
+import * as OfflinePlugin from 'offline-plugin/runtime';
+import './styles/styles.styl';
 import { initializeEvents, onResize } from './events';
 import { createCars, createCar, Car, CarElement } from './cars';
 import { GameState, State } from './game-state';
 import { moveCars, controlCar } from './gameplay';
 import { configure, Config } from './config';
-import './styles/styles.styl';
+import { customize } from './customization';
+
+OfflinePlugin.install();
 
 const createRender = (config: Config, gameState: GameState, cars: Car[], racingCar: CarElement) => {
     const { carWidth, carHeight, quarter, distanceBetween } = config;
@@ -86,3 +90,4 @@ const startGame = () => init(configure(container), container);
 
 startGame();
 onResize(startGame);
+customize();

@@ -25,21 +25,6 @@
           "type": "textarea"
         },
         {
-          "key": "gaCode",
-          "name": "GA Tracking ID",
-          "description": "Tracking ID for Google Analytics",
-          "type": "text",
-          "typeOptions": {
-            "monospace": true
-          }
-        },
-        {
-          "key": "image",
-          "name": "Share Image",
-          "type": "image",
-          "description": "Embedded Image to load when your App is shared"
-        },
-        {
           "key": "icon",
           "name": "Icon",
           "type": "image",

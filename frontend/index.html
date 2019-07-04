@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= htmlWebpackPlugin.options.title %> Made With Koji</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -21,8 +21,8 @@
           </div>
       </div>
       <div class="content">
-          <div class="message">You lost!</div>
-          <button id="start-button">Start!</button>
+          <div class="message"><%= htmlWebpackPlugin.options.gameOverText %></div>
+          <button id="start-button"><%= htmlWebpackPlugin.options.startText %></button>
       </div>
       <div class="bar bottom">
           <div class="controls">
@@ -37,26 +37,5 @@
     </div>
     <div class="container">
     </div>
-    <!-- <script>
-        function preventPullToRefresh(element) {
-            var prevent = false;
-
-            document.querySelector(element).addEventListener('touchstart', function(e){
-            if (e.touches.length !== 1) { return; }
-
-            var scrollY = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
-            prevent = (scrollY === 0);
-            });
-
-            document.querySelector(element).addEventListener('touchmove', function(e){
-            if (prevent) {
-                prevent = false;
-                e.preventDefault();
-            }
-            });
-        }
-
-        preventPullToRefresh('#app') // pass #id or html tag into the method
-    </script> -->
   </body>
 </html>

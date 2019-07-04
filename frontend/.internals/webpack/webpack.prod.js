@@ -7,63 +7,64 @@ const { HashedModuleIdsPlugin } = require('webpack');
 const kojiProjectConfig = JSON.parse(require('../../../.koji/resources/scripts/buildConfig')());
 
 module.exports = require('./webpack.base')({
-  mode: 'production',
-  entry: [path.join(process.cwd(), 'src/index.ts')],
-  output: {
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].chunk.js',
-  },
-  optimization: {
-    minimize: true,
-    nodeEnv: 'production',
-    sideEffects: true,
-    concatenateModules: true,
-    splitChunks: { chunks: 'all' },
-    runtimeChunk: true,
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(process.cwd(), 'index.html'),
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true,
-      },
-    title: kojiProjectConfig.metadata.title,
-      meta: {
-        "title": kojiProjectConfig.metadata.title,
-        "description": kojiProjectConfig.metadata.description,
-        "og:title": kojiProjectConfig.metadata.title,
-        "og:description": kojiProjectConfig.metadata.description,
-        "og:image": kojiProjectConfig.metadata.image,
-        "og:type": 'website',
-      },
-      inject: true,
-    }),
+    mode: 'production',
+    entry: [path.join(process.cwd(), 'src/index.ts')],
+    output: {
+        filename: '[name].[chunkhash].js',
+        chunkFilename: '[name].[chunkhash].chunk.js',
+    },
+    optimization: {
+        minimize: true,
+        nodeEnv: 'production',
+        sideEffects: true,
+        concatenateModules: true,
+        splitChunks: { chunks: 'all' },
+        runtimeChunk: true,
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(process.cwd(), 'index.html'),
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true,
+            },
+            title: kojiProjectConfig.metadata.title,
+            gameOverText: kojiProjectConfig.settings.gameOverText,
+            startText: kojiProjectConfig.settings.startText,
+            meta: {
+                "title": kojiProjectConfig.metadata.title,
+                "description": kojiProjectConfig.metadata.description,
+                "og:title": kojiProjectConfig.metadata.title,
+                "og:description": kojiProjectConfig.metadata.description,
+                "og:type": 'website',
+            },
+            inject: true,
+        }),
 
-    new OfflinePlugin({
-      relativePaths: false,
-      publicPath: '/',
-      appShell: '/',
-      excludes: ['.htaccess'],
-      caches: {
-        main: [':rest:'],
-        additional: ['*.chunk.js'],
-      },
-      safeToUseOptionalCaches: true,
-    }),
+        new OfflinePlugin({
+            relativePaths: false,
+            publicPath: '/',
+            appShell: '/',
+            excludes: ['.htaccess'],
+            caches: {
+                main: [':rest:'],
+                additional: ['*.chunk.js'],
+            },
+            safeToUseOptionalCaches: true,
+        }),
 
-    new HashedModuleIdsPlugin({
-      hashFunction: 'sha256',
-      hashDigest: 'hex',
-      hashDigestLength: 20,
-    }),
-  ],
+        new HashedModuleIdsPlugin({
+            hashFunction: 'sha256',
+            hashDigest: 'hex',
+            hashDigestLength: 20,
+        }),
+    ],
 });

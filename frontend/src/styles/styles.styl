@@ -2,6 +2,14 @@
 @import './cube'
 @import './ui'
 
+:root
+    --background-color: white
+    --main-color: #0229F6
+    --text-color: #040408
+    --cube-main-color: #0229F6
+    --cube-secondary-color: #DFE4FF
+    --perspective: -45deg
+
 html, body
     width 100%
     height 100%
@@ -13,8 +21,8 @@ body
     justify-content center
     flex-direction column
     align-items center
-    color #040408
-    background white
+    color var(--text-color)
+    background var(--background-color)
 
 body, button
     font-family Roboto Slab
@@ -27,7 +35,7 @@ body, button
     height calc(100% - 80px)
     perspective 1000px
     transform-style preserve-3d
-    transform rotateX(-45deg)
+    transform rotateX(var(--perspective))
     position relative
     z-index 5
 
