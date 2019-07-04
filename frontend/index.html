@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= htmlWebpackPlugin.options.title %> Made With Koji</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="ui">
+      <div class="bar top">
+          <div class="score-container">
+              <div>
+                  Score: <span class="score current-score">3322</span>
+              </div>
+          </div>
+          <div class="score-container">
+              <div>
+                  High Score: <span class="score high-score">1234</span>
+              </div>
+          </div>
+      </div>
+      <div class="content">
+          <div class="message">You lost!</div>
+          <button id="start-button">Start!</button>
+      </div>
+      <div class="bar bottom">
+          <div class="controls">
+              <div class="control left">
+                  <div class="arrow left"></div>
+              </div>
+              <div class="control right">
+                  <div class="arrow right"></div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="container">
+    </div>
+    <!-- <script>
+        function preventPullToRefresh(element) {
+            var prevent = false;
+
+            document.querySelector(element).addEventListener('touchstart', function(e){
+            if (e.touches.length !== 1) { return; }
+
+            var scrollY = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
+            prevent = (scrollY === 0);
+            });
+
+            document.querySelector(element).addEventListener('touchmove', function(e){
+            if (prevent) {
+                prevent = false;
+                e.preventDefault();
+            }
+            });
+        }
+
+        preventPullToRefresh('#app') // pass #id or html tag into the method
+    </script> -->
+  </body>
+</html>

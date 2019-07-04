@@ -17,7 +17,7 @@ module.exports = require('./webpack.base')({
   entry: [
     'eventsource-polyfill', // Necessary for hot reloading with IE, but does anyone care about IE any more...??
     'webpack-hot-middleware/client?reload=true',
-    path.join(process.cwd(), 'index.ts'),
+    path.join(process.cwd(), 'src/index.ts'),
   ],
   output: {
     filename: '[name].js',
@@ -31,7 +31,7 @@ module.exports = require('./webpack.base')({
 
     new HtmlWebpackPlugin({
       inject: true,
-      template: '.internals/webpack/resources/index.html',
+      template: path.join(process.cwd(), 'index.html'),
       title: kojiProjectConfig.metadata.title,
       meta: {
           "title": kojiProjectConfig.metadata.title,

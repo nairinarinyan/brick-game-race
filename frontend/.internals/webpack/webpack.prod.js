@@ -8,7 +8,7 @@ const kojiProjectConfig = JSON.parse(require('../../../.koji/resources/scripts/b
 
 module.exports = require('./webpack.base')({
   mode: 'production',
-  entry: [path.join(process.cwd(), 'index.ts')],
+  entry: [path.join(process.cwd(), 'src/index.ts')],
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',
@@ -23,7 +23,7 @@ module.exports = require('./webpack.base')({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: '.internals/webpack/resources/index.html',
+      template: path.join(process.cwd(), 'index.html'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,

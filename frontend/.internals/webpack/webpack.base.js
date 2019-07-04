@@ -29,6 +29,14 @@ module.exports = options => ({
         },
       },
       {
+        test: /\.styl$/,
+        use: [
+            'style-loader',
+            'css-loader',
+            'stylus-loader'
+        ]
+      },
+      {
         // Preprocess our own .css files
         test: /\.css$/,
         exclude: /node_modules/,
