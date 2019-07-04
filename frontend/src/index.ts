@@ -3,6 +3,7 @@ import { createCars, createCar, Car, CarElement } from './cars';
 import { GameState, State } from './game-state';
 import { moveCars, controlCar } from './gameplay';
 import { configure, Config } from './config';
+import './styles/styles.styl';
 
 const createRender = (config: Config, gameState: GameState, cars: Car[], racingCar: CarElement) => {
     const { carWidth, carHeight, quarter, distanceBetween } = config;

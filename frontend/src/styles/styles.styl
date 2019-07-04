@@ -33,12 +33,15 @@ body, button
 .car-container
     block-size()
     position relative
-    margin 200px auto
     transform-style preserve-3d
     position absolute
     bottom 0
     left 0
     right 0
+    +below(400px)
+        margin 100px auto
+    +above(401px)
+        margin 200px auto
 
 .controls
     display flex
