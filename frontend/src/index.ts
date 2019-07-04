@@ -1,4 +1,3 @@
-import './styles/styles.styl';
 import { initializeEvents, onResize } from './events';
 import { createCars, createCar, Car, CarElement } from './cars';
 import { GameState, State } from './game-state';
@@ -11,7 +10,7 @@ const createRender = (config: Config, gameState: GameState, cars: Car[], racingC
     const render = (lastTimeStamp: number) => (timeStamp: number) => {
         requestAnimationFrame(render(timeStamp));
 
-        const delta = timeStamp - lastTimeStamp;
+        const delta = Math.min(timeStamp - lastTimeStamp, config.maxFrameDuration);
 
         moveCars(cars, carWidth, carHeight, delta, quarter, distanceBetween, gameState);
         controlCar(racingCar, delta, quarter, gameState);
@@ -39,8 +38,8 @@ const init = (config: Config, container: HTMLElement) => {
     initializeEvents(setDirectionSpeed, startGame);
     wireUpUI(gameState);
 
-    const cars = createCars(container);
-    const racingCar = createCar(container);
+    const cars = createCars(container, config.blockSize);
+    const racingCar = createCar(container, config.blockSize);
 
     const render = createRender(config, gameState, cars, racingCar);
 

@@ -22,8 +22,8 @@ const createCube = () => {
     return cube;
 };
 
-export const createCar = (container: HTMLElement): CarElement => {
-    const cubeTransforms = [[50, 0], [-50, 0], [0, -50], [0, 50], [50, 100], [-50, 100]];
+export const createCar = (container: HTMLElement, blockSize: number): CarElement => {
+    const cubeTransforms = [[blockSize, 0], [-blockSize, 0], [0, -blockSize], [0, blockSize], [blockSize, 2 * blockSize], [-blockSize, 2 * blockSize]];
     const tireIndices = [0, 1, 4, 5];
     const carContainer = document.createElement('div');
     carContainer.classList.add('car-container');
@@ -40,11 +40,11 @@ export const createCar = (container: HTMLElement): CarElement => {
     return carContainer;
 };
 
-export const createCars = (container: HTMLElement, n = 4, cars: Car[] = []): Car[] => {
+export const createCars = (container: HTMLElement, blockSize: number, n = 4, cars: Car[] = []): Car[] => {
     if (!n) return cars;
 
-    const el = createCar(container);
+    const el = createCar(container, blockSize);
     const car = { el, position: 0, fromLeft: getRandomPosition() };
 
-    return createCars(container, n - 1, cars.concat(car));
+    return createCars(container, blockSize, n - 1, cars.concat(car));
 };
