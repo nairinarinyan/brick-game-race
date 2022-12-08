@@ -10,7 +10,7 @@
         "start": "NODE_ENV=development nodemon -L --watch ../.koji --watch src -e json .internals/development-server"
     },
     "dependencies": {
-        "express": "4.16.3",
+        "express": "4.17.3",
         "koji-tools": "^0.5.1",
         "typescript": "^3.4.4",
         "whatwg-fetch": "^3.0.0"
